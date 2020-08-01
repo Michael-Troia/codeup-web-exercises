@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Basics Examples</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Helvetica;
+            font-weight: bold;
+        }
+        .flex-container {
+            /*default height will take entire container*/
+            height: 500px;
+            width: 100%;
+            border: 3px solid goldenrod;
+            display: flex;/*1 display flex is needed for flex styling*/
+            flex-direction: row;/*can also be reverse row or column*/
+            flex-wrap: wrap; /*by default is "nowrap, wrap-reverse moves wrapped content to "front"*/
+            justify-content: center;/*where is the content fixed when wrapping or overflowing start, end, center, space-between, space-around, space-evenly*/
+            align-items: center;/*aligns by the cross axis, default align items: stretch*/
+            /*baseline aligns or stretches based on font-size*/
+            align-content: end;
+        }
+        .flex-item {
+            background: #BFD45D;
+            border: 2px solid #F9EFD6;
+            padding: 1em;
+            /*flex-basis: auto;*/
+        }
+
+    /*    .box1 {
+    align-self: flex-end;
+    order: 1;
+    }*/
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+    <div class="flex-item">Item 4</div>
+    <div class="flex-item">Item 5</div>
+    <div class="flex-item">Item 6</div>
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+    <div class="flex-item">Item 4</div>
+    <div class="flex-item">Item 5</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+    <div class="flex-item">Item 4</div>
+    <div class="flex-item">Item 5</div>
+    <div class="flex-item">Item 6</div>
+
+</div>
+
+</body>
+</html>
