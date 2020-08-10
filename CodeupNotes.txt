@@ -398,14 +398,118 @@ parseInt: attempts to convert a string to an integer value
 parseFloat: attempts to convert a string to a floating point (i.e. decimal) value
 Number('123abc') // NaN
 parseInt('123abc') // 123
+parseFloat('12.3abc') // 12.3
 
 Working With Strings
 Here are some useful functions to use when working with strings in JavaScript:
 .length: property that describes the number of characters in the string.
 .indexOf(char): returns the index of the specified character in the string.
 .replace(find, replace): returns a copy of the string after performing a substitution.
+todo !!!
 .substring(fromIndex, toIndex): returns a subset of the original string based on the provided indices.
 .toUpperCase(): returns a copy of the string in all upper case.
 .toLowerCase(): returns a copy of the string in all lower case.
 .trim(): returns a copy of the string with whitespace at the beginning and end removed.
 
+Exercises:
+var a = 1;
+var b = a++;
+var c = ++a;
+// what is the value of a, b, and c?
+// a = 3, b = 2, c = 3;
+
+var d = "hello";
+var e = false;
+d++;
+e++;
+// d = Nan, e = 1;
+
+var perplexed; // perplexed is undefined (no value is assigned)
+perplexed + 2;
+// Nan
+
+var price = 2.7;
+price.toFixed(2);
+// 2.70;
+
+var price = "2.7";
+price.toFixed(2);
+// 2.70;
+
+isNaN(0)
+// false
+
+isNaN(1)
+// false
+
+isNaN("")
+// false
+
+isNaN("string")
+// true
+
+isNaN("0")
+// false
+
+isNaN("1")
+// false
+
+isNaN("3.145")
+// false
+
+isNaN(Number.MAX_VALUE)
+// false
+
+isNaN(Infinity)
+// false
+
+isNaN("true")
+// true
+
+isNaN(true)
+// false
+
+isNaN("false")
+// true
+
+isNaN(false)
+// false
+
+// to illustrate why the isNaN() function is needed:
+NaN == NaN
+
+!true
+// false
+
+!false
+// true
+
+!!true
+// true
+
+!!false
+// false
+
+!!0
+// false
+
+!!-0
+// false
+
+!!1
+// true
+
+!!-1
+// true
+
+!!0.1
+
+!!"hello"
+
+!!""
+
+!!''
+
+!!"false"
+
+!!"0"
