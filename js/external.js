@@ -33,13 +33,25 @@ alert("Wow. I only made $" + paycheck + " this week.");
 
 //3
 
-var answer8 = prompt("Is the class full?");
+/*var answer8 = prompt("Is the class full?");
 var answer9 = prompt("Is is there a conflict with your schedule?");
-
 if ((answer8.includes('y' || 'Y') || (answer9.includes('y' || 'Y')))){
     alert("Then I'm afraid you can't register for this class.")
 } else {
     alert("Then hurry up and register already!");
-}
+}*/
+
+var classCapacity = 30;
+var registeredStudent = 20;
+var classDoesNOTConflict = confirm("Press OK if the class does not conflict with your schedule.")
+var canEnroll = (classCapacity > registeredStudent) && classDoesNOTConflict;
+alert("Able to enroll: " + canEnroll)
+
 
 // 4
+
+var offerNOTExpired = confirm("Press ok if the offer is not expired.");
+var numberItems = prompt("How many items are you purchasing?");
+var premiumMembership = confirm("Press ok if you are a premium member.");
+var offerApplied = (numberItems > 2 || premiumMembership) && offerNOTExpired;
+alert("Offer applied: " + offerApplied)

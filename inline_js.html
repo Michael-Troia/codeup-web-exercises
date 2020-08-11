@@ -5,7 +5,37 @@
 </head>
 <body>
 <script>
-    console.log("Hello from inline JavaScript");
+/*    console.log("Hello from inline JavaScript");
+    function bestFriend(name) {
+        alert(name + "?? But Michael is your best BEST friend, right?");
+    }
+    bestFriend(prompt("Who is your best friend?"));
+
+    var favoriteColor = function(color) {
+        //making a function a variable makes it only work after
+        //after the variable is declared
+        var question = "What's your favorite color?";
+        var response = prompt(question);
+        alert(response + "??????" + "What about " + color);
+        return response;
+    }*/
+
+/*
+    var response = favoriteColor("orange");
+    alert("Your favorite color is " + response);
+*/
+
+    (function () {
+        var iffeVar ="this is a restricted var";
+    })();
+
+    var bestFriend = function (realBestie) {
+        var question = "Who's your best friend?";
+        var response = prompt(question);
+        alert(response + "???? I thought it was " + realBestie);
+    }
+    bestFriend("Michael");
+    bestFriend("Monkeys");
 </script>
 </body>
 </html>

@@ -1,0 +1,154 @@
+* {box-sizing: border-box;}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: lightskyblue;
+    font-family: Chalkboard, sans-serif;
+}
+
+h1 {text-align: center;}
+
+h2, h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.green-box {
+    background: green;
+    height: 1em;
+    width: 2em;
+}
+
+.border {border: 2px solid black;}
+
+.card {
+    width: 400px;
+    height: 800px;
+    background: white;
+    padding: 1em;
+    margin: 0 auto;
+    /* enter needed declarations here */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+section {
+    /* enter needed declarations here */
+    display: flex;
+}
+
+/*display: flex;!*1 display flex is needed for flex styling*!
+flex-direction: row;!*can also be reverse row or column*!
+flex-wrap: wrap; !*by default is "nowrap, wrap-reverse moves wrapped content to "front"*!
+justify-content: center;!*where is the content fixed when wrapping or overflowing start, end, center, space-between, space-around, space-evenly*!
+align-items: center;!*aligns by the cross axis, default align items: stretch*!
+!*baseline aligns or stretches based on font-size*!
+align-content: end;*/
+
+section:nth-of-type(1) {
+    height: 3em;
+    background: lightgreen;
+    justify-content: space-between;
+    align-items: center;
+}
+/*Selects the last div in the first section*/
+section:nth-of-type(1) div:last-child {
+    align-self: flex-start;
+}
+
+.purple-box {
+    background: fuchsia;
+    width: 3em;
+    height: 1em;
+    /*display: flex;*/
+    align-items: center;
+}
+
+.purple-box:nth-of-type(1) {
+    /* enter needed declarations here */
+    flex-grow: 2;
+}
+
+.purple-box:nth-of-type(2) {
+    /* enter needed declarations here */
+    flex-grow: 1;
+}
+
+.blue-box {
+    width: 100%;
+    background: blue;
+    height: 10em;
+}
+
+section:nth-of-type(3) {
+    /* enter needed declarations here */
+    align-items: center;
+}
+
+section:nth-of-type(3) h3 {
+    /* enter needed declarations here */
+    /*display: flex;*/
+    flex-grow: 1;
+}
+
+.orange-circle {
+    background: orange;
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
+    margin: .5em;
+}
+
+.large-brown-box {
+    height: 5em;
+    width: 5em;
+    background: brown;
+    /* enter needed declarations here */
+    flex-grow: 1;
+}
+
+.large-brown-box:nth-of-type(2) {
+    margin: 0 1em;
+}
+
+section:nth-of-type(5) {
+    /* enter needed declarations here */
+    /*display: flex;*/
+    justify-content: space-evenly;
+}
+
+.yellow-box {
+    background: yellow;
+    width: 2em;
+    height: 2em;
+}
+
+section:nth-of-type(6) {
+    background: coral;
+    height: 14em;
+    /* enter needed declarations here */
+    /*display: flex;*/
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-evenly;
+    align-items: center;
+    /*flex-flow: row-reverse wrap-reverse;*/
+}
+
+.grey-box {
+    background: grey;
+    width: 3em;
+    height: 3em;
+    justify-content: space-between;
+}
+
+.grey-box:nth-of-type(odd) {
+    height: 4em;
+}
