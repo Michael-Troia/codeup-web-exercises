@@ -10,7 +10,8 @@
  */
 
 function sayHello(name) {
-    return ("Hello, " + name);
+    var message = ("Hello, " + name);
+    return message;
 }
 
 /**
@@ -55,7 +56,6 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-
 function isTwo(number) {
     return (number === 2);
 }
@@ -75,9 +75,9 @@ console.log(isTwo(random));
  */
 
 function calculateTip(tip,bill) {
-    return (bill * tip).toFixed(2);
+    return (tip * bill).toFixed(2);
 }
-
+console.log(calculateTip(0.20,20))
 
 /**
  * TODO:
