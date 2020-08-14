@@ -21,15 +21,12 @@
  */
 
 function analyzeColor(color) {
-    switch (color) {
-        case "red":
-            alert("ew, red");
-            break;
-        case "blue":
-            alert("cool, blue!");
-            break;
-        default:
-            alert("that colors okay");
+    if (color === "red") {
+        alert("ew, red");
+    } else if (color === "blue") {
+        alert("cool, blue!");
+    } else {
+        alert("that colors okay");
     }
     return(alert(color));
 }
@@ -39,21 +36,45 @@ function analyzeColor(color) {
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
+// var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+// var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-analyzeColor(randomColor);
+// analyzeColor(randomColor);
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-
-
+// function analyzeColor2(randomColor) {
+//     switch (randomColor){
+//         case "red":
+//             alert("Yuck, I hate " + randomColor);
+//             break;
+//         case "orange":
+//             alert("Yuck, I hate " + randomColor);
+//             break;
+//         case "yellow":
+//             alert("Yuck, I hate " + randomColor);
+//             break;
+//         case "green":
+//             alert("Yuck, I hate " + randomColor);
+//             break;
+//         case "blue":
+//             alert("Yuck, I hate " + randomColor);
+//             break;
+//         case "indigo":
+//             alert("Yuck, I hate " + randomColor);
+//             break;
+//         case "violet":
+//             alert("Yuck, I hate " + randomColor);
+//             break;
+//     }
+// }
+// analyzeColor2(randomColor);
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -126,7 +147,7 @@ function calculateTotal(luckyNumber,totalAmount) {
      }
      var priceOff = (totalAmount * discount)
      var newTotal = (totalAmount - priceOff)
-     alert("No discount for you, your bill is " + newTotal + "and you saved " + priceOff);
+     alert("Your new bill is $" + newTotal + " , your lucky number is " + luckyNumber + ". You saved $" + priceOff);
 }
 calculateTotal(luckyNumber,totalAmount);
 
@@ -147,3 +168,23 @@ calculateTotal(luckyNumber,totalAmount);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+if (confirm("Would you like to enter a number?")) {
+    var theNumber = prompt("Please enter a number");
+    if(typeof theNumber === "number"){
+        if (theNumber % 2 == 0) {
+            alert("the number is even");
+        } else {
+            alert("the number is odd");
+        }
+        alert("the number plus 100 is " + (+theNumber + 100));
+        if (theNumber < 0) {
+            alert("the number is negative");
+        } else {
+            alert("the number is positive");
+        }
+    } else {
+        alert("boy, pick a number");
+    }
+}
+
