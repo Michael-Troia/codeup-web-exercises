@@ -194,51 +194,56 @@ var weathermanSays = function(weather) {
 //TODO: Write a function that accepts a string that is a traffic light color as an input.
 // When this function is called, it should return a message informing the user what to do when
 // approaching that color light at an intersection.
-var color = prompt("What color is the light?")
-function lookinForMyChapstick() {
-    if (color === "green") {
-        alert("Go");
-    } else if (color === "yellow") {
-        alert("slow down");
-    } else if (color === "red") {
-        alert("Stop");
-    } else {
-        alert("get some help");
-    }
-}
-lookinForMyChapstick()
+
+// var color = prompt("What color is the light?")
+// function lookinForMyChapstick() {
+//     if (color === "green") {
+//         alert("Go");
+//     } else if (color === "yellow") {
+//         alert("slow down");
+//     } else if (color === "red") {
+//         alert("Stop");
+//     } else {
+//         alert("get some help");
+//     }
+// }
+// lookinForMyChapstick()
+//
 
 
-// ================ NESTED STATEMENTS ===============
-//TODO Together: If user is under 15, they are not eligible for a learners permit, else they are.
-// If they are eligible, check age. If they are 15 they are eligible for a learners permit,
-// if they are 16 or older and have a permit, they are eligible for license,
-// if they are 16 or older and do not have a permit, they are not eligble for a license.
-var age = prompt('what is your age?');
-var permit = confirm('do you have a permit?');
-function theLicenceCheck() {
-    if (age < 15) {
-        alert('can not get permit');
-    } else {
-        if (age == 15) {
-            alert('can get permit');
-        } else if (age >= 16 && permit == true) {
-            alert('get a licence!');
-        } else {
-            alert('you need a permit first!');
-        }
-    }
-}
-theLicenceCheck()
+
+//
+// // ================ NESTED STATEMENTS ===============
+// //TODO Together: If user is under 15, they are not eligible for a learners permit, else they are.
+// // If they are eligible, check age. If they are 15 they are eligible for a learners permit,
+// // if they are 16 or older and have a permit, they are eligible for license,
+// // if they are 16 or older and do not have a permit, they are not eligble for a license.
+// var age = prompt('what is your age?');
+// var permit = confirm('do you have a permit?');
+// function theLicenceCheck() {
+//     if (age < 15) {
+//         alert('can not get permit');
+//     } else {
+//         if (age == 15) {
+//             alert('can get permit');
+//         } else if (age >= 16 && permit == true) {
+//             alert('get a licence!');
+//         } else {
+//             alert('you need a permit first!');
+//         }
+//     }
+// }
+// theLicenceCheck()
 
 
 
 // ================ TERNARY STATEMENT ================
 //TODO Together: Regular way - rewrite as ternary
-
-// var message;
-// var success = true;
+// (condition) ? does if true : or else do this
+/*var message;
+var success = true;
 //
+//*/
 // if (success) {
 //     message = "Operation was successful.";
 // } else {
@@ -246,13 +251,15 @@ theLicenceCheck()
 // }
 // console.log(message);
 
-//WRITE YOUR TERNARY STATEMENT HERE!
 
+//WRITE YOUR TERNARY STATEMENT HERE!
+/*(success) ? message = "opertation was successful." : message = "Something went wrong.";
+console.log(message)
 
 //TODO: Refactor the following conditional as a ternary
 
-// var weather = "sunny";
-// var weatherMessage;
+var weather = "sunny";
+var weatherMessage;
 
 // if(weather === "rainy"){
 //    weatherMessage = "It's raining!";
@@ -261,14 +268,34 @@ theLicenceCheck()
 // }
 // console.log(weatherMessage);
 
-//WRITE YOUR TERNARY STATEMENT HERE!
+//WRITE YOUR TERNARY STATEMENT HERE! TODO THIS IS AWESOME
+weatherMessage = (weather === "rainy") ? "it's raining" : "Have a nice day!";*/
 
 
+/*function checkIfGameIsOver(numberOfLives) {
+    if (numberOfLives === 0) {
+        alert("sorry, game over");
+    } else {
+        alert("next level!");
+    }
+}*/
+var numberOfLives = 0;
+alert((numberOfLives === 0) ? "sorry game over" : "next level!");
 
 // =============== SWITCH STATEMENT ================
 //TODO Together:
+// switch (condition) {
+//     case 0:
+//         // code here
+//         break;
+//     case 1:
+//         // code here
+//         break;
+//     default:
+//         // code similar to else
+// }
 
-// var pizzaPreference = prompt("What kind of pizza do you like?");
+pizzaPreference = prompt("What kind of pizza do you like?");
 // console.log("User pizza input: " + pizzaPreference);
 //
 // if (pizzaPreference === "pineapple and hot sauce") {
@@ -280,15 +307,59 @@ theLicenceCheck()
 // } else {
 //     alert(pizzaPreference + " isn't my favorite, but let's order some!");
 // }
+function startOrder(pizzaPreference) {
+    switch (pizzaPreference) {
+        case "cheese":
+            alert("yum, cheese")
+            break;
+        case "pineapple":
+            alert("yum! My favorite too!");
+            break;
+        default:
+            alert("Well at least you like pizza!");
+    }
+}
 
 
 
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
+var theWeather = prompt("is it 'rainy', 'sunny' or 'snowy'?");
+switch (theWeather) {
+    case 'rainy':
+        alert("rain, go away!")
+        break;
+    case 'sunny':
+        alert("Here comes the sun, doodoo doo doo")
+        break;
+    case 'snowy':
+        alert("*John Mayer voice* 'Snow day, snow dayyyy'")
+        break;
+    default:
+        alert("What, you can't follow directions?");
+}
 
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
-
+var needAnswer = true;
+do {
+    switch (prompt("what color is the traffic light?")) {
+        case "green":
+            alert("go")
+            needAnswer = false;
+            break;
+        case "yellow":
+            alert("slow down")
+            needAnswer = false;
+            break;
+        case "red":
+            alert("stop")
+            needAnswer = false;
+            break;
+        default:
+            alert("huh?")
+    }
+} while(needAnswer);
 
 
 // ================ REVERSE ENGINEERING =================
