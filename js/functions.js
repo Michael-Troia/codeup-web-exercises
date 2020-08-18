@@ -116,4 +116,3 @@ function applyDiscount(beforePrice, discountPercent) {
 alert("$" + applyDiscount(b,d) + " is your final price");
 console.log("hi");
 
-git clone git@github.com:gocodeup/ten-functions.git~/IdeaProjects/ten-functions

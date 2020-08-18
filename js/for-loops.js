@@ -1,36 +1,33 @@
 function returnMultiplicationTable(aNumber) {
     // return aNumber.toString();
     let output = '';
-    for (i = 1; i < 11; i++){
+    for (i = 1; i <= 10; i++){
         output += (aNumber + " x " + i + " = " + (aNumber * i));
-        if (i !== 10) {
-            output += "\n";
-        }
+        if (i !== 10) output += "\n";
     }
     return output;
 }
 
-var evenOrOdd;
-var rand = random;
-function returnEvenOddMessage(aNumber) {
+function returnEvenOddMessage(integer) {
     let output1 = '';
-    if (aNumber % 2 === 0) {
-        output1 += (aNumber + " is " + " even");
-        evenOrOdd = "even";
-    } else {
-        output1 += (aNumber + " is " + " odd");
-        evenOrOdd = "odd";
-    }
-    return output1.toString();
+    return output1 += integer % 2 === 0 ? (integer + " is even") : (integer + " is odd");
 }
-
 
 function returnTenEvenOddMessages() {
-    let output3 = '';
-    returnEvenOddMessage(rand);
-    for (i = 1; i < 11; i++) {
-        output3 += (rand + " is " + evenOrOdd)
+    let output2 = '';
+    let arr = [];
+    while (arr.length < 10) {
+        var r = Math.floor(Math.random() * 200) + 20;
+        if(arr.indexOf(r) === -1){
+            arr.push(r);
+            output2 += returnEvenOddMessage(r);
+            if (arr.length !== 10) {
+                output2 += "\n";
+            }
+        }
     }
-    console.log(output3);
-    return output3;
+    console.log(output2);
+    return output2;
 }
+
+function returnNumberSail(input){}

@@ -65,7 +65,7 @@ jasmineRequire.HtmlReporter = function(j$) {
       this.failureCount++;
     }
 
-    if (result.status == 'pending') {
+    if (result.status === 'pending') {
       this.pendingSpecCount++;
     }
   };
@@ -78,8 +78,7 @@ jasmineRequire.HtmlReporter = function(j$) {
       createElement = options.createElement,
       createTextNode = options.createTextNode,
       navigateWithNewParam = options.navigateWithNewParam || function() {},
-      addToExistingQueryString =
-        options.addToExistingQueryString || defaultQueryString,
+      addToExistingQueryString = options.addToExistingQueryString || defaultQueryString,
       filterSpecs = options.filterSpecs,
       htmlReporterMain,
       symbols,
