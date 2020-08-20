@@ -30,4 +30,13 @@ function returnTenEvenOddMessages() {
     return output2;
 }
 
-function returnNumberSail(input){}
+function returnNumberSail(input){
+    let output = '';
+    for (let i = 1; i < 10; i++) {
+        for (let j = 1; j <= i; j++) {
+            output += i
+        }
+        if (i < 9) output += '\n'
+    }
+    return output;
+}

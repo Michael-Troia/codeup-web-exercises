@@ -77,9 +77,9 @@ describe("returnTenEvenOddMessages", function() {
 // Number Sail Tests
 describe("returnNumberSail", function() {
     // TODO: include a test to verify that the function is defined
-
+    expect(returnNumberSail()).toBeDefined();
     // TODO: include a test to verify that the function output is a string
-
+    expect(typeof returnNumberSail()).tobe("string");
     // TODO: include a test to verify that the function output matches the following value
     var expectedValue = "1\n" +
         "22\n" +

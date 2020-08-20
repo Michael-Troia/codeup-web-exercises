@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/grid-exercise-bootstrap" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ten-functions" vcs="Git" />
   </component>
 </project>
