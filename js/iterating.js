@@ -79,5 +79,24 @@
     console.log(first(numbers));
     console.log(second(numbers));
     console.log(last(numbers));
+    // console.log(numbers.unshift(numbers.pop()))
+    // console.log(numbers.push(numbers.shift()));
+
+    console.log(numbers);
+    //todo new functions of arrays: push and pop (add and remove to the front), unshift and shift (to the back)
+        // console.log(numbers.unshift(numbers.pop()))
+        // console.log(numbers.push(numbers.shift()));
+
+    /*todo .indexof, .lastindex, .slice,
+        numbers.indexOf(0);
+        >1
+
+        numbers.slice(0,1);
+        >(5) todo doesn't change array
+
+        numbers.sort();
+
+    */
+        console.log(numbers);
 
 })();

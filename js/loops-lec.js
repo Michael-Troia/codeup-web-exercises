@@ -71,14 +71,3 @@
 // }
 // console.log(exampleOfRetruningFromLoop)
 // console.log(exampleOfRetruningFromLoop())
-
-(function returnMultiplicationTable(aNumber) {
-    return aNumber.toString();
-    let output = '';
-    for (i =1 ; i < 11; i++){
-        output += (aNumber + " x " + i + " = " + (aNumber * i));
-        if (aNumber !== 10) output += "\n";
-    }
-    alert(output);
-    return output;
-})()
