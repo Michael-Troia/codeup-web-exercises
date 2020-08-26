@@ -1,0 +1,116 @@
+<!--<!doctype html>-->
+<!--<html xmlns="http://www.w3.org/1999/html">-->
+<!--<head>-->
+<!--    <title></title>-->
+<!--    <meta charset="UTF-8">-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;<script src="js/bom-dom-lec.js"></script>&ndash;&gt;-->
+<!--<h1> This is a demo page</h1>-->
+<!--<button type="button" onclick="reloadFromCache()">Refresh!></button>-->
+<!--<button type="button" onclick="reloadFromServer()">from server</button>-->
+<!--<script>-->
+<!--    function reloadFromCache() {-->
+<!--        location.reload();-->
+<!--        alert('from cache, maybe');-->
+<!--    }-->
+<!--    function reloadFromServer() {-->
+<!--        location.reload(true);-->
+<!--        alert('from server');-->
+<!--    }-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!--<h1>bob</h1>-->
+<!--<p class="a">line 1</p>-->
+<!--<p class="b">line 2</p>-->
+<!--<p class="a">line 3</p>-->
+<!--<p class="b">line 4</p>-->
+<!--<script>-->
+<!--    "use strict";-->
+<!--    (function() {-->
+<!--        var paragraph = document.getElementsByTagName("p");-->
+
+<!--        let output = '';-->
+<!--        for (var i = 0; i < paragraph.length; i++){-->
+<!--            output += paragraph[i].innerHTML + '<br>';-->
+<!--        }-->
+
+<!--        var hout = document.getElementsByTagName("h1");-->
+<!--        hout.innerHTML = output;-->
+<!--    })();-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <title>JavaScript Example</title>-->
+<!--</head>-->
+<!--<body >-->
+<!--<form name="login">-->
+<!--    <div>-->
+<!--        <label for="text">Enter your name:</label>-->
+<!--        <input id="personName" name="personName" type="text" placeholder="name">-->
+<!--    </div>-->
+<!--</form>-->
+<!--<br>-->
+<!--<button onclick="saveUsername()">Save Text</button>-->
+<!--<hr />-->
+<!--<h1 id="out"></h1>-->
+<!--<p id="demo" style="font-size: 4rem"></p>-->
+<!--<p id="demoText"></p>-->
+<!--<script>-->
+<!--    "use strict";-->
+<!--    function saveUsername() {-->
+<!--        let hout = document.getElementById('out');-->
+<!--        // get the "username" input-->
+<!--        var usernameInput = document.forms.login.personName;-->
+<!--        // log the value of the "username" input-->
+<!--        hout.innerText = usernameInput.value;-->
+<!--    };-->
+<!--    &ndash;&gt;-->
+
+    // // todo if innerText were instead innerHTML, it would allow the user to type html tags that affect page
+    // var task1 = document.getElementById("demo");
+    // task1.innerHTML = '<b>Hello io!</b>';
+    // var task2 = document.getElementById('demoText');
+    // task2.innerText = '<b>hello io!</b>';
+    <!--
+        // todo MINI LAB
+        // Using the code below:
+        //     Change the style of p1 to 'font-size: 4rem'
+        // Get the data-* attribute from p2
+        // Print the data-* attribute on the console log.-->
+
+        <!--<!DOCTYPE html>-->
+    <!--<html lang="en">-->
+    <!--<head>-->
+    <!--    <title>JavaScript Example</title>-->
+    <!--</head>-->
+    <!--<body bgcolor="#faebd7">-->
+    <!--<p id="p1">To be or not to be?</p>-->
+    <!--<p id="p2" data-playname="Hamlet">That is the question.</p>-->
+    <!--<script>-->
+    <!--    "use strict";-->
+    <!--    (function() {-->
+    <!--        // Change the style of p1 to 'font-size: 4rem'-->
+    <!--        var task1 = document.getElementById("p2");-->
+    <!--        task1.setAttribute('style', 'font-size: 4rem');-->
+    <!--        // Get the data-* attribute from p2-->
+
+    <!--        var dataOfP2 = task1.getAttribute('data-playname');-->
+    <!--        // Print the data-* attribute on the console log.-->
+    <!--        console.log(dataOfP2);-->
+
+    <!--    })();-->
+    <!--</script>-->
+<!--</body>-->
+<!--</script>-->
+<!--</body>-->
+
+<!--/* you can get elements by tag name, class, or id-->
+<!--style.backgroundColor-->
