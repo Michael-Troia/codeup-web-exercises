@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="me" type="button">click me</button>
+    <button id="me2" type="button">second button</button>
+    <script>
+        var clickListener = function (event){
+            alert('you clicked me');
+        }
+
+        var me = document.getElementById('me')
+        me.addEventListener("click", clickListener);
+
+        var remover = function (event) {
+            me.removeEventListener('click', clickListener);
+        }
+
+        var me2 = document.getElementById('me2');
+        me2.addEventListener('click', remover);
+    </script>
+</body>
+</html>

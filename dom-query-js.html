@@ -24,36 +24,73 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
-
+<button id="btn1" type="button">Javascript is cool</button>
+<button id="btn2" type="button">blue subheader</button>
+<button id="btn3" type="button">grey and blue list items</button>
+<button id="btn4" type="button">Mission accomplished</button>
 <script>
     (function() {
         "use strict";
+
+        var jsIsCool = function (event){
+            mainHeader.innerHTML = 'Javascript is cool';
+        }
+
+        var blueSubheader = function (event){
+            subHeader.style.color = '#00F';
+        }
+
+        var greyAndBlue = function (event){
+            for (var i = 0; i < listItems.length; i++){
+                if (i%2=== 0) {
+                    listItems[i].style.color = '#999';
+                }
+            }
+            listItems[0].style.color = '#00F';
+        }
+
+        var missionAccomplished = function (event) {
+            subParagraphs[0].innerText = 'Mission Accomplished!';
+        }
+
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = 'Javascript is cool';
+        // mainHeader.innerHTML = 'Javascript is cool';
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = '#00F';
+        // subHeader.style.color = '#00F';
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
 
         // TODO: Set text color on every other list item to grey
-        for (var i = 0; i < listItems.length; i++){
-            if (i%2=== 0) {
-                listItems[i].style.color = '#999';
-            }
-        }
+        // for (var i = 0; i < listItems.length; i++){
+        //     if (i%2=== 0) {
+        //         listItems[i].style.color = '#999';
+        //     }
+        // }
         // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style.color = '#00F';
+        // listItems[0].style.color = '#00F';
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = 'Mission Accomplished!';
+        // subParagraphs[0].innerText = 'Mission Accomplished!';
+
+        var btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', jsIsCool);
+        var btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click', blueSubheader);
+        var btn3 = document.getElementById('btn3');
+        btn3.addEventListener('click', greyAndBlue);
+        var btn4 = document.getElementById('btn4');
+        btn4.addEventListener('click', missionAccomplished);
+
+
+
     })();
 </script>
 </body>
