@@ -1,0 +1,103 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<body>
+//bootstrap
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<h1>Taco Bell <3</h1>
+
+<div id='map' style="width: 75%; height: 50%;"></div>
+
+
+<script src="js/mapbox-geocode-utils.js"></script>
+<script src="js/keys.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+<link href="https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-76.4189,40.2164,5.61,0/300x200?access_token=pk.eyJ1IjoidHJvaWFtaWNoYWVsIiwiYSI6ImNrZWN4MDN6NDAwMTMyc216Y3VlOXN3YzIifQ.4npBJg3_tq3kQx6kJuvl8A"/>
+
+<script>
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 11,//start zoom
+        center: [-98.318120, 29.498940]//start pos
+
+    });
+
+
+    //taco bell
+    // var tacoMarker = new mapboxgl.Marker()
+    //     .setLngLat([-98.318120, 29.498940])
+    //     .addTo(map);
+    // var tacoPopup = new mapboxgl.Popup()
+    //     .setHTML("<p>Yo quiero Taco Bell!</p>")
+    // tacoMarker.setPopup(tacoPopup)
+    //
+    // //arby's
+    // var arbyMarker = new mapboxgl.Marker()
+    //     .setLngLat([-98.35903,29.48122])
+    //     .addTo(map)
+    // var arbyPopup = new mapboxgl.Popup()
+    //     .setHTML("They have the meats")
+    // arbyMarker.setPopup(arbyPopup)
+    //
+    // //coldstone
+    // var coldMarker = new mapboxgl.Marker()
+    //     .setLngLat([-98.329291,29.561369])
+    //     .addTo(map)
+    // var coldPopup = new mapboxgl.Popup()
+    //     .setHTML("'Stone Cold' Steve ColdStone Creamery?")
+    // coldMarker.setPopup(coldPopup)
+    // var markers = [tacoMarker,arbyMarker,coldMarker];
+
+    var places = [
+        {name: "Taco Bell", LngLat: ([-98.318120, 29.498940]), HTML: "<p>Yo queiro Taco Bell</p>"},
+        {name: "Arby's", LngLat: ([-98.35903,29.48122]), HTML: "<p>They have the meats!</p>"},
+        {name: "ColdStone", LngLat: ([-98.329291,29.561369]), HTML: "<p>'Stone Cold' Steve ColdStone Creamery?</p>"}
+    ];
+
+    places.forEach(function placeMarkerAndPopup(place, LngLat, HTML) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(place.HTML)
+            var marker = new mapboxgl.Marker()
+                .setLngLat(place.LngLat)
+                .addTo(map)
+                .setPopup(popup);
+
+
+            // popup.addTo(map);
+        });
+
+
+
+
+
+    // geocode("8230 cantura mills", MAPBOX_TOKEN)
+    //     .then(function (result){
+    //         map.setCenter(result);
+    //         map.setZoom(15);
+    //         console.log(result);
+    //     });
+
+
+
+    var geekdom = {lng: -98.4935, lat: 29.4264};
+    reverseGeocode(geekdom, MAPBOX_TOKEN)
+        .then(function (result){
+            console.log(result);
+        });
+
+</script>
+
+</body>
+</html>
