@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body id="body">
+<h1>Konami Code</h1>
+<hr>
+<button id="reset">reset</button>
+<style type="text/css">
+    .red =
+</style>
+<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+
+    // $(document).keyup(function(event){
+    //     var input = 0;
+    //     console.log(event.keyCode);
+    // });
+    $(document).ready(function() {
+        var img = document.createElement("img")
+        var konami = '3838404037393739666513'
+        var keys = "";
+
+        $('#reset').click(function (event){
+           keys = "";
+            console.log(keys);
+        });
+
+        $(document).keyup(function(event){
+            keys += (event.keyCode);
+            console.log(keys);
+            if (keys.valueOf().toString() === (konami)){
+                img.src="img/Pizza.png";
+                document.getElementById('body').appendChild(img);
+            }
+        });
+
+        //todo
+        // $('#body').addClass('something');
+        // $('#body').removeClass('something');
+        // $('#body').toggleClass('something');
+
+        // $('*button').attr("id") = 'reset';
+
+
+    });
+</script>
+</body>
+</html>

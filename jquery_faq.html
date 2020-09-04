@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Fun</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style type="text/css">
+        .jumbotron {text-align: center;}
+        .red {background-color: red;}
+        .purple {background-color: mediumpurple;}
+        .orange {background-color: darkorange}
+        .hidden {display:none;}
+        .cute {
+            color: blueviolet;
+
+            font-family: cursive;
+        }
+        .underlined {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+<h1>FAQ about <em>Cats</em></h1>
+<dl>
+    <dt>1. Why is my cat meowing at me?</dt>
+    <dd>Cats believe that they are in fact dangerously close to starvation, so they prefer to
+    stockpile</dd>
+</dl>
+
+<!-- jQuery and bootstrap -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+
+    $(document).ready(function(){
+        //something
+        $('h1').click(function (){
+            $(this).animate()
+        })
+    });
+</script>
+</body>
+</html>

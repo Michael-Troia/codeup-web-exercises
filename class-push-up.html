@@ -5,14 +5,70 @@
     <title></title>
 </head>
 <body>
-<h2></h2>
+<h2>Morning Pushups</h2>
 <script>
+    /*
     var counter = document.getElementsByTagName('h2');
     var display = '';
     for (var i = 1; i < 11; i ++) {
         display += (i + '<br>');
     }
-    counter[0].innerHTML = display;
+    counter[0].innerHTML = display;*/
+
+    //8/28/2020
+// function fizzbbuzz(num){
+//     for (var i = 1; i <= num; i++){
+//         if (i % 3 === 0) {
+//             console.log('fizz');
+//         } else if (i % 5 === 0) {
+//             console.log('buzz');
+//         } else if (i % 15 === 0) {
+//             console.log('fizzbuzz');
+//         } else {
+//             console.log(i);
+//         }
+//     }
+// }
+//
+// fizzbbuzz(30);
+
+
+    //todo find the average of an array
+// function average(arr){
+//     var sum = 0;
+//     if (Array.isArray(arr)) {
+//         for (var i = 0; i < arr.length; i++) {
+//             sum += arr[i];
+//         }
+//         console.log(sum / arr.length);
+//
+//     } else {
+//         console.log('enter an array, silly goose');
+//     }
+// }
+// // var arr = [10,11,12];
+// average([10,11,12]);
+
+    //todo find the factors of each int in an array
+function factors(arr){
+    var theFactors = [];
+    if (Array.isArray(arr)){
+        for (var i = 0; i < arr.length; i++){
+            if (Number.isInteger(arr[i])){
+                for (var n = 1; n <= arr[i]; n++){
+                    if (arr[i] % n === 0){
+                        theFactors.unshift(n);
+                    }
+                }
+            }
+        }
+    }
+    console.log(theFactors);
+}
+
+factors([10,9,100]);
+
+
 </script>
 </body>
 </html>
