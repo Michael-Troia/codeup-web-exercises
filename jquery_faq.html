@@ -4,7 +4,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery Fun</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <style type="text/css">
         .invisible {visibility: hidden;}
         .jumbotron {text-align: center;}
@@ -12,19 +15,25 @@
         .purple {background-color: mediumpurple;}
         .orange {background-color: darkorange}
         .highlighted {background-color: #FF0;}
+        .h2 {}
         .cute {
             color: blueviolet;
 
             font-family: cursive;
         }
-        .underlined {
-            text-decoration: underline;
+        .bold {
+            font-weight: bold;
         }
     </style>
 
 </head>
 <body>
-<h1>FAQ about the<em>CIA</em></h1>
+<div class="alert alert-info" role="alert">
+    <h2>Would you like to sign up for our newsletter?</h2>
+    <span>x</span>
+</div>
+<h2 id="registerQuery" style="display: none">Would you like to register?</h2>
+<h1>FAQ about the <em>CIA</em></h1>
 <dl>
     <dt>1.Who works for the CIA?</dt>
     <dd class="invisible">The CIA carefully selects well-qualified people in nearly all fields of study. Scientists, engineers, economists, linguists, mathematicians, secretaries, accountants and computer specialists are but a few of the professionals continually in demand. Much of the Agency’s work, like that done in academic institutions, requires research, careful evaluation, and writing of reports that end up on the desks of this nation’s policymakers. Applicants are expected to have a college degree with a minimum GPA of 3.0 and must be willing to relocate to the Washington, D.C., area. Selection for Agency employment is highly competitive and employees must successfully complete a polygraph and medical examination and a background investigation before entering on duty. The Agency endorses equal employment opportunity for all employees. </dd>
@@ -47,51 +56,77 @@
     <dt class="">10. What if I want to eventually work for CIA?</dt>
     <dd class="invisible">To qualify for a position with the Agency, you must be 18 years of age, a US citizen, and a high school graduate. Our personnel requirements change from month-to-month as positions are filled and others become available. A college degree, preferably an advanced degree, is a standard requirement for overseas officers, intelligence analysts, and other non-clerical positions. Knowledge of a foreign language is also helpful. Because the Agency's personnel needs span such a broad spectrum, we do not recommend any one academic track over another.</dd>
 </dl>
-<button id="hide">Uncover the CIA</button>
+<a href="#" id="hide">Uncover the CIA</a>
 
 <ul>
     <li>
-        <h3>MK-Ultra</h3>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <h3>MK-Ultra from history.com</h3>
+        <ul class="hidden">
+            <li>In the 1950s and 1960s—the height of the Cold War—the United States government feared that Soviet, Chinese and North Korean agents were using mind control to brainwash U.S. prisoners of war in Korea.</li>
+            <li>In response, Allan Dulles, director of the Central Intelligence Agency (CIA), approved Project MK-Ultra in 1953. The covert operation aimed to develop techniques that could be used against Soviet bloc enemies to control human behavior with drugs and other psychological manipulators.</li>
+            <li>The program involved more than 150 human experiments involving psychedelic drugs, paralytics and electroshock therapy. Sometimes the test subjects knew they were participating in a study—but at other times, they had no idea, even when the hallucinogens started taking effect.</li>
+            <li class="topics">Many of the tests were conducted at universities, hospitals or prisons in the United States and Canada. Most of these took place between 1953 and 1964, but it’s not clear how many people were involved in the tests—the agency kept notoriously poor records and destroyed most MK-Ultra documents when the program was officially halted in 1973.</li>
         </ul>
     </li>
     <li>
-        <h3>Operation Paperclip</h3>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <h3>Operation Paperclip from history.com</h3>
+        <ul class="hidden">
+            <li>As World War II was entering its final stages, American and British organizations teamed up to scour occupied Germany for as much military, scientific and technological development research as they could uncover. </li>
+            <li>Trailing behind Allied combat troops, groups such as the Combined Intelligence Objectives Subcommittee (CIOS) began confiscating war-related documents and materials and interrogating scientists as German research facilities were seized by Allied forces. One enlightening discovery—recovered from a toilet at Bonn University—was the Osenberg List: a catalogue of scientists and engineers that had been put to work for the Third Reich.</li>
+            <li>In a covert affair originally dubbed Operation Overcast but later renamed Operation Paperclip, roughly 1,600 of these German scientists (along with their families) were brought to the United States to work on America’s behalf during the Cold War. The program was run by the newly-formed Joint Intelligence Objectives Agency (JIOA), whose goal was to harness German intellectual resources to help develop America’s arsenal of rockets and other biological and chemical weapons, and to ensure such coveted information did not fall into the hands of the Soviet Union.</li>
+            <li class="topics">One of the most well-known recruits was Wernher von Braun, the technical director at the Peenemunde Army Research Center in Germany who was instrumental in developing the lethal V-2 rocket that devastated England during the war. Von Braun and other rocket scientists were brought to Fort Bliss, Texas, and White Sands Proving Grounds, New Mexico, as “War Department Special Employees” to assist the U.S. Army with rocket experimentation. Von Braun later became director of NASA’s Marshall Space Flight Center and the chief architect of the Saturn V launch vehicle, which eventually propelled two dozen American astronauts to the Moon.</li>
         </ul>
     </li>
     <li>
-        <h3>Area 51</h3>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <h3>Area 51 from britannica.com</h3>
+        <ul class="hidden">
+            <li>Area 51, secret U.S. Air Force military installation located at Groom Lake in southern Nevada. It is administered by Edwards Air Force Base in southern California. The installation has been the focus of numerous conspiracies involving extraterrestrial life, though its only confirmed use is as a flight testing facility.</li>
+            <li>For years there was speculation about the installation, especially amid growing reports of UFO sightings in the vicinity. The site became known as Area 51, which was its designation on maps of the Atomic Energy Commission. Conspiracy theories gained support in the late 1980s, when a man alleging to have worked at the installation claimed that the government was examining recovered alien spacecraft.</li>
+            <li>In 2013 the U.S. government officially acknowledged the existence of Area 51. That year the National Security Archive at the George Washington University obtained through the Freedom of Information Act (FOIA) a formerly classified CIA document that chronicled the history of the U-2 spy plane; a heavily redacted version had previously been released in 1998. According to the report, in 1955 the remote site—which included an airfield not used by the military since World War II—was selected in order to test the U-2.</li>
+            <li class="topics">Test flights of that spy plane, and subsequent aircraft, accounted for many of the UFO sightings in the area; the U-2 could reach altitudes much higher than any other planes at the time. After the U-2 was put into service in 1956, Area 51 was used to develop other aircraft, including the A-12 (also known as OXCART) reconnaissance plane and the stealth fighter F-117 Nighthawk.</li>
         </ul>
     </li>
 </ul>
+<button id="unhide">Highlight section</button>
 <!-- jQuery and bootstrap -->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+<div class="topSecret"><img src="img/topsecret.jpg"> </div>
+<div class="topSecret"><img src="img/topsecret.jpg"> </div>
+<div class="topSecret"><img src="img/topsecret.jpg"> </div>
 <script>
 
     $(document).ready(function(){
         //something
+        $('.hidden').ready(function (){
+            $('.hidden').hide()
+        });
         $('#hide').click(function (){
             $('dd').toggleClass('invisible');
-        })
+        });
         $('dt').click(function (){
             $(this).toggleClass('highlighted');
-        })
+        });
+        $('#unhide').click(function () {
+            $('.topics:last-child').toggleClass('highlighted');
+        });
+        $('h3').click(function() {
+            $(this).next().children('li:first-child').toggleClass('bold');
+        });
+        $('li').click(function (){
+            $(this).parent().children(':first-child').toggleClass('cute');
+        });
+        //todo need work on bonus of traversing JQUERY
+        $('span').click(function (){
+            $(this).parent().hide();
+        });
+        $('h3').click(function (){
+            $(this).next().toggleClass('hidden').slideToggle(500);
+        });
+
+        $('#registerQuery').delay(8000).fadeIn(500);
+
+
+
     });
 </script>
 </body>
