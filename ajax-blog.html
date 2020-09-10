@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<div style="width: 15%">
+    <input type="text" placeholder="Blog title" id="newTitle">
+    <input type="text" placeholder="content" id="newContent">
+    <button type="button" id="submit">Submit</button>
+</div>
+<div class="card" id="posts">
+    <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+    </div>
+</div>
+
+<script>
+    (function() {
+        var d = new Date();
+        var tz = Date();
+        console.log(tz);
+        "use strict";
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
+        $().ready(function () {
+            $.get("data/blog.json").done(function (data, status, jqXhr) {
+                alert('Data retrieved');
+
+                console.log(data);
+                data.forEach(function (item) {
+                    $('#posts').append("<h5 class=\"card-title\">" + item.title + "</h5>" + "<p class=\"card-text\">" + item.content + "</p>");
+                })
+            })
+        })
+        $('#submit').click(function () {
+            $('#posts').append("<em>" + tz + "</em>" + "<h5 class=\"card-title\">" + $('#newTitle').val() + "</h5>" + "<p class=\"card-text\">" + $('#newContent').val() + "</p>");
+        })
+    })();
+</script>
+
+</body>
+</html>

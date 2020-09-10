@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Online Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 </head>
 <body>
 
-<h1>My Tool Store</h1>
+<div class="card">
+    <div class="d-flex justify-self-center"><img src="img/ToolGroupLogoLarge.jpg" class="card-img-top"  style="width: 300px"></div>
 
-<table id="products">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Categories</th>
-        </tr>
-    </thead>
-    <tbody id="insertProducts">
-        <td id="table"></td>
-        <td id="quantity"></td>
-        <td id="price"></td>
-        <td id="categories"></td>
-    </tbody>
-</table>
-
+    <div class="card-body">
+        <h5 class="card-title">My Tool Store</h5>
+        <div class="table-responsive-lg">
+            <table class="table" id="products">
+                <thead>
+                <tr>
+                    <th>Tool</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Categories</th>
+                </tr>
+                </thead>
+                <tbody id="insertProducts"></tbody>
+            </table>
+        </div>
+        <button id="refresh" type="button">Load Inventory</button>
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
@@ -31,30 +37,20 @@
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
     $().ready(function (){
-      $.get("data/inventory.json").done(function (data,status,jqXhr){
-          alert('Data retrieved');
-          console.log(data);
-          var newTable = '';
-          var newQuantity = '';
-          var newPrice = '';
-          var newCategories = '';
+        $('#refresh').click(function (){
+            $('#insertProducts').html(null);
 
-          data.forEach(function (item){
-              newTable += item['title'];
-              newQuantity += item['quantity'];
-              newPrice += item['price'];
-              newCategories   += ['categories'];
+            $.get("data/inventory.json").done(function (data,status,jqXhr){
+              alert('Data retrieved');
+
+              console.log(data);
+              data.forEach(function (item){
+                  $('#insertProducts').append("<tr><td>" + item.title + "</td><td>" + item.quantity + "</td><td>" + item.price + "</td><td>" + item.categories.join(", ") + "</td></tr>" );
+              })
           })
-          $('#table').html(newTable);
-          $('#quantity').html(newQuantity);
-          $('#price').html(newPrice);
-          $('#categories').html(newCategories);
-      })
+        })
     })
     // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
 })();
 </script>
 

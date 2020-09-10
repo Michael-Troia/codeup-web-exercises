@@ -24,11 +24,13 @@
         ],
         "price": 200
     }, {
-        "title": "Screwdrivers",
+        "title": "Screwdriver",
         "quantity": 25,
         "categories": [
             "tool"
         ],
         "price": 10
-    }
+    }, {
+}
+
 ]

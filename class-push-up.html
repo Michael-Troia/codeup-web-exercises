@@ -5,7 +5,12 @@
     <title></title>
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
 <h2>Morning Pushups</h2>
+<input type="text">
+<button>submit</button>
+<div></div>
 <script>
     /*
     var counter = document.getElementsByTagName('h2');
@@ -50,24 +55,31 @@
 // average([10,11,12]);
 
     //todo find the factors of each int in an array
-function factors(arr){
-    var theFactors = [];
-    if (Array.isArray(arr)){
-        for (var i = 0; i < arr.length; i++){
-            if (Number.isInteger(arr[i])){
-                for (var n = 1; n <= arr[i]; n++){
-                    if (arr[i] % n === 0){
-                        theFactors.unshift(n);
-                    }
-                }
-            }
-        }
-    }
-    console.log(theFactors);
-}
+// function factors(arr){
+//     var theFactors = [];
+//     if (Array.isArray(arr)){
+//         for (var i = 0; i < arr.length; i++){
+//             if (Number.isInteger(arr[i])){
+//                 for (var n = 1; n <= arr[i]; n++){
+//                     if (arr[i] % n === 0){
+//                         theFactors.unshift(n);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     console.log(theFactors);
+// }
+//
+// factors([10,9,100]);
 
-factors([10,9,100]);
+//todo create a button and input that will put the user input in a div when the button is pressed
+$(document).ready(function (){
+    $('button').click(function (){
+        $('div').html($('input').val());
+    });
 
+})
 
 </script>
 </body>
