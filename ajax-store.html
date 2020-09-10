@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Online Store</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <script src="js/keys.js"></script>
 </head>
 <body>
 
@@ -48,6 +48,10 @@
                   $('#insertProducts').append("<tr><td>" + item.title + "</td><td>" + item.quantity + "</td><td>" + item.price + "</td><td>" + item.categories.join(", ") + "</td></tr>" );
               })
           })
+        })
+
+        $.get("http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=" + WEATHER_TOKEN).done(function (data){
+            console.log(data);
         })
     })
     // TODO: Take the data from inventory.json and append it to the products table

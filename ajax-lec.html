@@ -23,6 +23,15 @@
                 innerHTML += '<br>\n';
                 $('#div1').html(innerHTML);
             });
+
+            //todo get data from a server
+            $.get("http://api.icndb.com/jokes/random").done(function(data){
+                console.log(data.value.joke);
+            })
+
+            $.get("https://swapi.dev/api/people/12").done(function(data){
+                console.log(data.name);
+            })
         });
 
     })();

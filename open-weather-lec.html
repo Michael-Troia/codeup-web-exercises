@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="js/keys.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+<script>
+    (function(){
+        $().ready(function(){
+
+            $.get("http://api.openweathermap.org/data/2.5/weather", {
+                APPID: WEATHER_TOKEN,
+                q:     "San Antonio, US"
+            });
+
+            // $.get("http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=" + WEATHER_TOKEN).done(function (data){
+            //     console.log(data);
+            // })
+        })
+
+    })();
+</script>
+</body>
+</html>
