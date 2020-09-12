@@ -1,7 +1,11 @@
 #fiveDayForecast{
-    /*display: none;*/
-    background-color: #00ABA9 ;
+    padding: 50px;
 }
+
 *{
-    /*border: #00ABA9 solid 1px;*/
+    font-family: "Comic Sans MS", cursive;
+}
+
+body{
+    padding-bottom: 100px;
 }

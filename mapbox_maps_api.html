@@ -27,7 +27,7 @@
         center: [-98.318120, 29.498940]//start pos
 
     });
-
+    console.log(map);
     var places = [
         {name: "Taco Bell", LngLat: ([-98.318120, 29.498940]), HTML: "<p>Yo quiero Taco Bell</p>"},
         {name: "Arby's", LngLat: ([-98.35903,29.48122]), HTML: "<p>They have the meats!</p>"},
@@ -45,11 +45,12 @@
                 // .popup.addTo(map);
             });
 
-    // var geekdom = {lng: -98.4935, lat: 29.4264};
-    // reverseGeocode(geekdom, MAPBOX_TOKEN)
-    //     .then(function (result){
-    //         console.log(result);
-    //     });
+    var geekdom = {lng: -98.4935, lat: 29.4264};
+    reverseGeocode(geekdom, MAPBOX_TOKEN)
+        .then(function (result){
+            console.log(result);
+        });
+
 
 </script>
 
