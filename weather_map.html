@@ -41,9 +41,10 @@
             </div>
         </div>
     </div>
+    <input type="text" id="searchPlaces">
+    <button type="button" class="btn btn-primary" id="searchPlacesButton">Get Your 5-day Forecast</button>
 </div>
-<input type="text" id="searchPlaces">
-<button type="button" class="btn btn-primary" id="searchPlacesButton">Get Your 5-day Forecast</button>
+
 <!--Main Cards-->
 <div id="fiveDayForecast" class="container">
     <div class="alert alert-primary text-center" role="alert">
@@ -61,8 +62,9 @@
         <div id="forecast5" class="card">
         </div>
     </div>
+    <div id="coordinates"></div>
 </div>
-<div id="coordinates"></div>
+
 
 <div class="container" id='map' style='width: auto; height: 500px;'>
     <script>
@@ -86,13 +88,6 @@
             // console.log("yikes" + poop);
             //current weather
             $.get("http://api.openweathermap.org/data/2.5/weather", {
-            // $.get("api.openweathermap.org/data/2.5/forecast?", {
-                // appid: WEATHER_TOKEN,
-                // lat: poop.lat,
-                // lon: poop.lon,
-                // units: "imperial"
-                // "lat={lat}&lon={lon}&appid={your api key}, {
-                // }
                 APPID: WEATHER_TOKEN,
                 q: "San Antonio, US",
                 units: "imperial"
@@ -162,6 +157,9 @@
                     marker = new mapboxgl.Marker()
                         .setLngLat(e.lngLat)
                         .addTo(map);
+                    $('#coordinates').html(marker._lngLat.toString())
+                    destinationLat = marker._lngLat.lat;
+                    destinationLng = marker._lngLat.lng;
 
                     console.log(e.lngLat);
                     return marker
@@ -175,16 +173,20 @@
                 destinationLng = marker._lngLat.lng;
                 console.log(destinationLat);
                 $('#coordinates').html(marker._lngLat.toString())
+                $('#searchPlaces').html("")
             });
             //    lat={lat}&lon={lon}&appid={your api key},
 
             $('#searchPlacesButton').click(function (){
+
                 $.get("https://api.openweathermap.org/data/2.5/forecast", {
                     APPID: WEATHER_TOKEN,
                     lat: destinationLat,
                     lon: destinationLng,
-                    units: "imperial"
+                    units: "imperial",
+                    q: $('#searchPlaces').val()
                 }).done(function(data){
+                    $('#searchPlaces').val("")
                     var day = [];
                     for (var i = 0; i < 6; i++) {
                         // var temp = data.list[i].main.temp.toFixed(0);
@@ -243,11 +245,11 @@
                         $(target).html(
                             "<img src=\"" + day[i].WeatherIcon + "\" className=\"card-img-top\" alt=\"...\">" +
                             "<div className=\"card-body\">" +
-                            "<h5 className=\"card-title\">" + day[i].description + "<hr>" + day[i].tempFeel + "</h5>" +
-                            "<p className=\"card-text\">" + day[i].tempH + "</p>" +
+                            "<h5 className=\"card-title\">" + "Condition: " + day[i].description + "<hr>" + "Feels like: " + day[i].tempFeel + "</h5>" +
+                            "<p className=\"card-text\">" + "High: " + day[i].tempH + "<hr>" + "Low: " + day[i].tempL + "</p>" +
                             "</div>" +
                             "<div className=\"card-footer\">" +
-                            "<small className=\"text-muted\">footer</small>" +
+                            "<small className=\"text-muted\"></small>" +
                             "</div>"
                         )
                     }
