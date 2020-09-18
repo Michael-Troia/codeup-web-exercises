@@ -33,6 +33,10 @@ var forEachCallback = function (item,index,array) {
     console.log((index+1) + ": " + item);
 }
 
+let x = 4;
+
+
+
 daysOfTheWeek.forEach(forEachCallback);
 
 

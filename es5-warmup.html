@@ -1,0 +1,87 @@
+<!--1. Create a new HTML file called `es5-warmup.html`-->
+<!--2. Include the following HTML in the body:-->
+
+<!--```-->
+<!--<main>-->
+<!--    <div>bob</div>-->
+<!--    <div>STEVE</div>-->
+<!--    <div>sAlLY</div>-->
+<!--</main>-->
+<!--```-->
+<!--1. Include script tags with the following object:-->
+<!--​-->
+<!--```-->
+<!--var name = {lName: "smith"};-->
+<!--```-->
+<!--1. Write the needed JavaScript (without jQuery) to produce the following output in the browser:-->
+<!--​-->
+<!--```-->
+<!--Bob Smith-->
+<!--Steve Smith-->
+<!--Sally Smith-->
+<!--```-->
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<main>
+    <div>bob</div>
+    <div>STEVE</div>
+    <div>sAlLY</div>
+</main>
+
+<script>
+    (function() {
+    "use strict";
+       // var fullName = {lName: "smith"}
+       // var divs = document.getElementsByTagName('div')
+       // var convertCase = function(str){
+       //     return str[0].toUpperCase() + str.substring(1).toLowerCase()
+       // }
+       // var convertNodes = function(fullName, nodes) {
+       //     for (var i = 0; i < nodes.length; i += 1) {
+       //         nodes[i].innerText = convertCase(nodes[i].innerText) + " " + convertCase(fullName.lName)
+       //     }
+       // }
+       //
+       // convertNodes(fullName, divs);
+       //
+       // let items = ['apple', 'banana', 'orange'];
+       //
+       //  for (let item of items){
+       //      console.log(item);
+       //  }
+
+        //es5
+        const dog = {
+            breed,
+            age,
+            name,
+            isCute
+        };
+
+        const puppy = {
+            breed: "Lab",
+            age: 10,
+            name: "Sabrina",
+            isCute: true
+        };
+
+        let { breed, age, name, isCute } = puppy
+
+    })()
+
+
+
+</script>
+</body>
+</html>
