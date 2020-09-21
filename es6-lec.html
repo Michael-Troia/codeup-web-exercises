@@ -1,178 +1,404 @@
-<html>
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Document</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<script>-->
+<!--    (function(){-->
+<!--// //todo for(let ... of ...) function-->
+<!--//         let items = ['apple', 'banana', 'orange'];-->
+<!--//          for (let item of items){-->
+<!--//              console.log(item);-->
+<!--//          }-->
+<!--//-->
+<!--//         //es5-->
+<!--//         const dog = {-->
+<!--//             breed,-->
+<!--//             age,-->
+<!--//             name,-->
+<!--//             isCute-->
+<!--//         };-->
+<!--//-->
+<!--//         const puppy = {-->
+<!--//             breed: "Lab",-->
+<!--//             age: 10,-->
+<!--//             name: "Sabrina",-->
+<!--//             isCute: true-->
+<!--//         };-->
+<!--//-->
+<!--//         let { breed, age, name, isCute } = puppy-->
+<!--//-->
+<!--// //todo arrow functions-->
+<!--//     // Shortand for a function that returns a single expression.-->
+<!--//         const sayHello = function (name) {-->
+<!--//             return 'Hello, ' + name + '!';-->
+<!--//         }-->
+<!--//     // same as-->
+<!--//         const sayHello = (name) => 'Hello, ' + name + '!';-->
+<!--//     // Optionally, the parentheses can be omitted if there is only one argument.-->
+<!--//             const sayHello = name => 'Hello, ' + name + '!';-->
+<!--//     // Can also have multiple statements.-->
+<!--//             const sayHello = name => {-->
+<!--//             const greeting = 'Hello,  ' + name + '!';-->
+<!--//             return greeting;-->
+<!--//         };-->
+<!--//-->
+<!--// //todo ES6 way of handling default parameter values-->
+<!--//     // es6 syntax (including template strings)-->
+<!--//         function sayHello(name = 'World') {-->
+<!--//             return `Hello, ${name}!`;-->
+<!--//         }-->
+<!--//         sayHello(); // "Hello, World!"-->
+<!--//         sayHello('codeup'); // "Hello, codeup!"-->
+<!--//-->
+<!--//-->
+<!--// //todo Object Property Variable Assignment Shorthand-->
+<!--//     // old way-->
+<!--//         const name = 'codeup';-->
+<!--//         const person = {-->
+<!--//             name: name,-->
+<!--//             age: 4-->
+<!--//         };-->
+<!--//-->
+<!--//     // new shorthand-->
+<!--//         const name = 'codeup';-->
+<!--//         const person = {-->
+<!--//             name,-->
+<!--//             age: 4-->
+<!--//         };-->
+<!--//-->
+<!--// //todo destructuring objects-->
+<!--//     // new way-->
+<!--//         const person = {name: 'codeup', age: 4};-->
+<!--//         const {name, age} = person;-->
+<!--//         console.log(name); // 'codeup'-->
+<!--//         console.log(age); // 4-->
+<!--//     //destructuring with arrays:-->
+<!--//         const myArray = [1, 2, 3, 4, 5];-->
+<!--//         const [x, y] = myArray;-->
+<!--//         console.log(x); // 1-->
+<!--//         console.log(y); // 2-->
+
+
+
+
+<!--        const users = [-->
+<!--            {-->
+<!--                name: 'zach',-->
+<!--                email: 'zach@codeup.com',-->
+<!--                languages: ['javascript', 'bash']-->
+<!--            },-->
+<!--            {-->
+<!--                name: 'ryan',-->
+<!--                email: 'ryan@codeup.com',-->
+<!--                languages: ['clojure', 'javascript']-->
+<!--            },-->
+<!--            {-->
+<!--                name: 'luis',-->
+<!--                email: 'luis@codeup.com',-->
+<!--                languages: ['java', 'scala', 'php']-->
+<!--            },-->
+<!--            {-->
+<!--                name: 'fernando',-->
+<!--                email: 'fernando@codeup.com',-->
+<!--                languages: ['java', 'php', 'sql']-->
+<!--            },-->
+<!--            {-->
+<!--                name: 'justin',-->
+<!--                email: 'justin@codeup.com',-->
+<!--                languages: ['html', 'css', 'javascript', 'php']-->
+<!--            }-->
+<!--        ];-->
+
+<!--// TODO: fill in your name and email and add some programming languages you know-->
+<!--// to the languages array-->
+<!--        users.push({name: "michael", email: "michael@gmail.com", languages: ['javascript']})-->
+
+
+<!--// TODO: replace the `var` keyword with `const`, then try to reassign a variable-->
+<!--// // declared as `const`-->
+<!--        const name = 'Mike';-->
+<!--        const email = 'mike@mike.mike';-->
+<!--        const languages = ['English'];-->
+
+<!--// TODO: rewrite the object literal using object property shorthand-->
+
+<!--        users.push({-->
+<!--            name,-->
+<!--            email,-->
+<!--            languages-->
+<!--        });-->
+
+<!--// TODO: replace `var` with `let` in the following variable declarations-->
+
+<!--        let emails = [];-->
+<!--        let names = [];-->
+
+<!--// TODO: rewrite the following using arrow functions-->
+<!--        users.forEach(user => emails.push(user.email));-->
+<!--        users.forEach(user => names.push(user.name));-->
+
+<!--// TODO: replace `var` with `let` in the following declaration-->
+<!--        let developers = [];-->
+<!--        users.forEach(user => {-->
+<!--            // TODO: rewrite the code below to use object destructuring assignment-->
+<!--            //       note that you can also use destructuring assignment in the function-->
+<!--            //       parameter definition-->
+<!--            // const name = user.name;-->
+<!--            // const email = user.email;-->
+<!--            // const languages = user.languages;-->
+<!--            let {name, email, languages} = user;-->
+<!--            // TODO: rewrite the assignment below to use template strings-->
+<!--            developers.push(`${name}'s email is ${email} ${name} knows ${languages.join(', ')}`);-->
+<!--        });-->
+
+<!--// TODO: Use `let` for the following variable-->
+<!--        let list = '<ul>';-->
+
+<!--// TODO: rewrite the following loop to use a for..of loop-->
+<!--        for (developer of developers){-->
+<!--            // TODO: rewrite the assignment below to use template strings-->
+<!--            list += '<li>' + developer + '</li>';-->
+<!--        };-->
+
+<!--        list += '</ul>';-->
+<!--        document.write(list)-->
+<!--        console.log(users);-->
+<!--        console.log(emails);-->
+<!--        console.log(names);-->
+<!--        console.dir(users)-->
+<!--    })();-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--todo refactor as es6 -->
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ES6 Refactor</title>
+
+    <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+
 </head>
 <body>
+
+<main class="container">
+
+    <h1>ES6 Refactor</h1>
+
+    <h3>Top 3 Favorite Movies</h3>
+
+    <div id="favMovies">
+        <ol>
+            <li class="movie"></li>
+            <hr>
+            <li class="movie"></li>
+            <hr>
+            <li class="movie"></li>
+        </ol>
+    </div>
+
+    <button id="showBtn" class="btn btn-primary">Show Movies</button>
+
+</main>
+
+
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
 <script>
-    (function(){
-// //todo for(let ... of ...) function
-//         let items = ['apple', 'banana', 'orange'];
-//          for (let item of items){
-//              console.log(item);
-//          }
-//
-//         //es5
-//         const dog = {
-//             breed,
-//             age,
-//             name,
-//             isCute
-//         };
-//
-//         const puppy = {
-//             breed: "Lab",
-//             age: 10,
-//             name: "Sabrina",
-//             isCute: true
-//         };
-//
-//         let { breed, age, name, isCute } = puppy
-//
-// //todo arrow functions
-//     // Shortand for a function that returns a single expression.
-//         const sayHello = function (name) {
-//             return 'Hello, ' + name + '!';
-//         }
-//     // same as
-//         const sayHello = (name) => 'Hello, ' + name + '!';
-//     // Optionally, the parentheses can be omitted if there is only one argument.
-//             const sayHello = name => 'Hello, ' + name + '!';
-//     // Can also have multiple statements.
-//             const sayHello = name => {
-//             const greeting = 'Hello,  ' + name + '!';
-//             return greeting;
-//         };
-//
-// //todo ES6 way of handling default parameter values
-//     // es6 syntax (including template strings)
-//         function sayHello(name = 'World') {
-//             return `Hello, ${name}!`;
-//         }
-//         sayHello(); // "Hello, World!"
-//         sayHello('codeup'); // "Hello, codeup!"
-//
-//
-// //todo Object Property Variable Assignment Shorthand
-//     // old way
-//         const name = 'codeup';
-//         const person = {
-//             name: name,
-//             age: 4
-//         };
-//
-//     // new shorthand
-//         const name = 'codeup';
-//         const person = {
-//             name,
-//             age: 4
-//         };
-//
-// //todo destructuring objects
-//     // new way
-//         const person = {name: 'codeup', age: 4};
-//         const {name, age} = person;
-//         console.log(name); // 'codeup'
-//         console.log(age); // 4
-//     //destructuring with arrays:
-//         const myArray = [1, 2, 3, 4, 5];
-//         const [x, y] = myArray;
-//         console.log(x); // 1
-//         console.log(y); // 2
 
+    // This script works fine but let's update the JS!
+    // TODO: REFACTOR AS MANY PARTS OF THIS SCRIPT FROM ES5 TO ES6 SYNTAX AS POSSIBLE
 
+    (function() {
 
+        "use strict";
 
-        const users = [
+        let showBtn = document.getElementById("showBtn");
+
+        var movies = [
             {
-                name: 'zach',
-                email: 'zach@codeup.com',
-                languages: ['javascript', 'bash']
+                name: "LOTR",
+                year: "2001",
+                genre: "Fantasy"
             },
             {
-                name: 'ryan',
-                email: 'ryan@codeup.com',
-                languages: ['clojure', 'javascript']
+                name: "The Matrix",
+                year: "1999",
+                genre: "Sci-Fi"
             },
             {
-                name: 'luis',
-                email: 'luis@codeup.com',
-                languages: ['java', 'scala', 'php']
-            },
-            {
-                name: 'fernando',
-                email: 'fernando@codeup.com',
-                languages: ['java', 'php', 'sql']
-            },
-            {
-                name: 'justin',
-                email: 'justin@codeup.com',
-                languages: ['html', 'css', 'javascript', 'php']
+                name: "Shine",
+                year: "1996",
+                genre: "Drama"
             }
         ];
 
-// TODO: fill in your name and email and add some programming languages you know
-// to the languages array
-        users.push({name: "michael", email: "michael@gmail.com", languages: ['javascript']})
+        var buildMovieHTML = function (movie) {
+            var html = "";
+            html += '<ul><li>' + movie.name;
+            html +=  '</li><li>' + movie.year;
+            html += '</li><li>' + movie.genre + '</li></ul>';
+            return html;
+        }
 
+        var addHTMLToPage = function (movies) {
+            var movieItems = document.getElementsByClassName('movie');
+            for (var i = 0; i < movies.length; i += 1) {
+                movieItems[i].innerHTML = buildMovieHTML(movies[i]);
+            }
+        }
 
-// TODO: replace the `var` keyword with `const`, then try to reassign a variable
-// // declared as `const`
-        const name = 'Mike';
-        const email = 'mike@mike.mike';
-        const languages = ['English'];
-
-// TODO: rewrite the object literal using object property shorthand
-
-        users.push({
-            name,
-            email,
-            languages
+        showBtn.addEventListener("click", function() {
+            addHTMLToPage(movies);
         });
 
-// TODO: replace `var` with `let` in the following variable declarations
-
-        let emails = [];
-        let names = [];
-
-// TODO: rewrite the following using arrow functions
-        users.forEach(user => emails.push(user.email));
-        users.forEach(user => names.push(user.name));
-
-// TODO: replace `var` with `let` in the following declaration
-        let developers = [];
-        users.forEach(user => {
-            // TODO: rewrite the code below to use object destructuring assignment
-            //       note that you can also use destructuring assignment in the function
-            //       parameter definition
-            // const name = user.name;
-            // const email = user.email;
-            // const languages = user.languages;
-            let {name, email, languages} = user;
-            // TODO: rewrite the assignment below to use template strings
-            developers.push(`${name}'s email is ${email} ${name} knows ${languages.join(', ')}`);
-        });
-
-// TODO: Use `let` for the following variable
-        let list = '<ul>';
-
-// TODO: rewrite the following loop to use a for..of loop
-        for (developer of developers){
-            // TODO: rewrite the assignment below to use template strings
-            list += '<li>' + developer + '</li>';
-        };
-
-        list += '</ul>';
-        document.write(list)
-        console.log(users);
-        console.log(emails);
-        console.log(names);
-        console.dir(users)
     })();
 
+
 </script>
+
+</body>
+</html>
+
+
+
+<!--todo when refactored looks like:-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ES6 Refactor</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+</head>
+<body>
+
+<main class="container">
+
+    <h1>ES6 Refactor</h1>
+
+    <h3>Top 3 Favorite Movies</h3>
+
+    <div id="favMovies">
+        <ol>
+            <li class="movie"></li>
+            <hr>
+            <li class="movie"></li>
+            <hr>
+            <li class="movie"></li>
+        </ol>
+    </div>
+
+    <button id="showBtn" class="btn btn-primary">Show Movies</button>
+
+</main>
+
+<!-- jQuery Version 2.2.4 -->
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script>
+
+    {
+
+        "use strict";
+
+        const showBtn = document.getElementById("showBtn");
+
+        const movies = [
+            {
+                name: "LOTR",
+                year: "2001",
+                genre: "Fantasy"
+            },
+            {
+                name: "The Matrix",
+                year: "1999",
+                genre: "Sci-Fi"
+            },
+            {
+                name: "Shine",
+                year: "1996",
+                genre: "Drama"
+            }
+        ];
+
+
+        // object destructuring
+        // arrow function
+        const buildMovieHTML = ({ name, year, genre }) => {
+            return `<ul><li>${name}</li><li>${year}</li><li>${genre}</li></ul>`;
+        };
+
+
+        // arrow function
+        // for ... of loop
+        const addHTMLToPage = (movies) => {
+            const listItems = document.getElementsByClassName('movie');
+            let i = 0;
+            for (let listItem of listItems) {
+                listItem.innerHTML = buildMovieHTML(movies[i]);
+                ++i;
+            }
+        };
+
+
+        showBtn.addEventListener("click", () => {
+            addHTMLToPage(movies);
+        });
+
+    }
+
+
+</script>
+
 </body>
 </html>
